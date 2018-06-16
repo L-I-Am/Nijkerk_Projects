@@ -49,6 +49,8 @@ while rval:
                 lineType)
 
     # show image
+    cv2.namedWindow("Frame", cv2.WND_PROP_FULLSCREEN)
+    cv2.setWindowProperty("Frame", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
     cv2.imshow("Frame", frame)
 
     # if the 'q' or escape key is pressed, stop the loop
