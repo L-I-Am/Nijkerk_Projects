@@ -15,8 +15,8 @@ while rval:
     gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     # load in haar cascades for eyes and faces
-    haar_face_cascade = cv2.CascadeClassifier(r'E:\Nijkerk\Python3\Lib\site-packages\cv2\data\haarcascade_frontalface_default.xml')
-    haar_eye_cascade = cv2.CascadeClassifier(r'E:\Nijkerk\Python3\Lib\site-packages\cv2\data\haarcascade_eye.xml')
+    haar_face_cascade = cv2.CascadeClassifier(r'..\Python3\Lib\site-packages\cv2\data\haarcascade_frontalface_default.xml')
+    haar_eye_cascade = cv2.CascadeClassifier(r'..\Python3\Lib\site-packages\cv2\data\haarcascade_eye.xml')
 
     # detect eyes and faces on the grayscale image
     faces = haar_face_cascade.detectMultiScale(gray_frame, scaleFactor=1.2, minNeighbors=14)
@@ -36,7 +36,7 @@ while rval:
     # Put text on frame
 
     font = cv2.FONT_HERSHEY_SIMPLEX
-    bottomLeftCornerOfText = (10, 400)
+    bottomLeftCornerOfText = (10, 465)
     fontScale = 1
     fontColor = (255, 255, 255)
     lineType = 2
