@@ -16,11 +16,9 @@ while rval:
 
     # load in haar cascades for eyes and faces
     haar_face_cascade = cv2.CascadeClassifier(r'..\Python3\Lib\site-packages\cv2\data\haarcascade_frontalface_default.xml')
-    haar_eye_cascade = cv2.CascadeClassifier(r'..\Python3\Lib\site-packages\cv2\data\haarcascade_eye.xml')
 
     # detect eyes and faces on the grayscale image
     faces = haar_face_cascade.detectMultiScale(gray_frame, scaleFactor=1.2, minNeighbors=14)
-    eyes = haar_eye_cascade.detectMultiScale(gray_frame, scaleFactor=1.2, minNeighbors=14)
 
     if previousAmountFaces != len(faces):
         if previousAmountFaces < len(faces):
@@ -30,8 +28,6 @@ while rval:
     # draw rectangles around the faces and eyes
     for (x, y, w, h) in faces:
         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 2)
-    for (x, y, w, h) in eyes:
-        cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
     # Put text on frame
 
